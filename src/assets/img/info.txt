@@ -1,0 +1,11 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: DrSugiyama-Regular
+font link: https://fonts.google.com/specimen/Dr+Sugiyama
+font author: Sudtipos
+font author site: https://www.sudtipos.com/
+
+
+{"bg-gradient-0":"#000A68","bg-gradient-1":"#00C4EE","icon":"#ffffff","font":"#ffffff","slogan":"#ffffff"}
+      
