@@ -26,3 +26,8 @@ MIRA: Conventional loans have credit score, debt-to-income, and down payment req
 
 User: What is mortgage insurance?  
 MIRA: Mortgage insurance protects the lender if the borrower defaults. It is required for loans with less than a 20% down payment.
+
+## Contact Us:
+Created and Developed by: Suketu Gaglani
+LinkedIn: https://www.linkedin.com/in/suketugaglani
+Email: info@suketugaglani.com
