@@ -44,7 +44,7 @@ function IndexNavbar() {
         const percentageDownScreen = sectionPosition / viewportHeight;
 
         // Interpolate offset between 50 (for top of page) and 150 (for farther down)
-        const offset = 50 + (150 * percentageDownScreen);
+        const offset = 0 + (150 * percentageDownScreen);
 
         const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: targetPosition, behavior: 'smooth' });
@@ -102,18 +102,13 @@ function IndexNavbar() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#why-mira" onClick={(e) => handleNavLinkClick(e, 'why-mira')}>
-                  Why MIRA
+                <NavLink href="#FAQs" onClick={(e) => handleNavLinkClick(e, 'FAQs')}>
+                  FAQs
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="#register" onClick={(e) => handleNavLinkClick(e, 'register')}>
-                  Register
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#login" onClick={(e) => handleNavLinkClick(e, 'login')}>
-                  Login
+                  Register/Login
                 </NavLink>
               </NavItem>
             </Nav>

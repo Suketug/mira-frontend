@@ -26,6 +26,7 @@ import Examples from "./index-sections/Examples.js";
 import Download from "./index-sections/Download.js";
 import AboutMira from "./index-sections/AboutMira.js";
 import Features from "./index-sections/Features.js";
+import FAQs from "./index-sections/faqs.js";
 
 function Index() {
   React.useEffect(() => {
@@ -48,6 +49,7 @@ function Index() {
           <Images />
           <AboutMira />
           <Features />
+          <FAQs />
           <BasicElements />
           <Navbars />
           <Tabs />
