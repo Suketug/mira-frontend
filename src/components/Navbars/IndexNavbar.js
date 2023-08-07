@@ -1,6 +1,5 @@
 import React from "react";
 
-
 // reactstrap components
 import {
   Collapse,
@@ -36,6 +35,21 @@ function IndexNavbar() {
     };
   });
 
+  const handleNavLinkClick = (event, targetId) => {
+    event.preventDefault();
+    const target = document.getElementById(targetId);
+    if (target) {
+        const viewportHeight = window.innerHeight;
+        const sectionPosition = target.getBoundingClientRect().top;
+        const percentageDownScreen = sectionPosition / viewportHeight;
+
+        // Interpolate offset between 50 (for top of page) and 150 (for farther down)
+        const offset = 50 + (150 * percentageDownScreen);
+
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }
+};
   return (
     <>
       {collapseOpen ? (
@@ -78,17 +92,27 @@ function IndexNavbar() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink href="#about-mira">
+                <NavLink href="#about-mira" onClick={(e) => handleNavLinkClick(e, 'about-mira')}>
                   About MIRA
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#register">
+                <NavLink href="#features" onClick={(e) => handleNavLinkClick(e, 'features')}>
+                  Features
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#why-mira" onClick={(e) => handleNavLinkClick(e, 'why-mira')}>
+                  Why MIRA
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#register" onClick={(e) => handleNavLinkClick(e, 'register')}>
                   Register
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#login">
+                <NavLink href="#login" onClick={(e) => handleNavLinkClick(e, 'login')}>
                   Login
                 </NavLink>
               </NavItem>

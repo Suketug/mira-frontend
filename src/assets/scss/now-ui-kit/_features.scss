@@ -1,0 +1,49 @@
+.features-container {
+    margin-top: 50px;
+  }
+  
+  .features-header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .features-row {
+    display: flex;
+    align-items: stretch;
+  }
+  
+  .feature-card {
+    margin: 0 15px 30px;
+    min-height: 300px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    will-change: opacity, transform;
+  }
+  
+  .feature-card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  .feature-card {
+    .card-title {
+        font-size: 16px; // Adjust the size as per your preference
+        font-weight: bold; // Makes the title bold for emphasis
+    }
+}

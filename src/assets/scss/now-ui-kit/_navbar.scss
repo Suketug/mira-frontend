@@ -198,3 +198,8 @@
 .bg-white{
     background-color: $white-color !important;
 }
+
+html, body {
+    scroll-behavior: smooth;
+  }
+  
