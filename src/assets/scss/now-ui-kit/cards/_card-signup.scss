@@ -48,6 +48,21 @@
         margin-bottom: 20px;
     }
 
+    /* For the nav links in the card header */
+    .nav-tabs-info .nav-link {
+      cursor: pointer;
+    }
+
+    /* For the buttons */
+    .btn {
+      cursor: pointer;
+    }
+
+    /* For the links */
+    a {
+      cursor: pointer;
+    }
+    
     .social-line{
         margin-top: 20px;
         text-align: center;
