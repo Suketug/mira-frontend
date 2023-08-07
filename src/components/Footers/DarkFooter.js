@@ -45,7 +45,8 @@ function DefaultFooter() {
             </ul>
           </nav>
           <div className="copyright" id="copyright">
-            © 2023, MIRA, All Rights Reserved. Designed and Created By <strong>Suketu Gaglani</strong>.
+              © 2023, MIRA, All Rights Reserved. <br />
+              Designed and Created By <a href="https://www.linkedin.com/in/suketugaglani" target="_blank" rel="noopener noreferrer"><strong>Suketu Gaglani</strong></a>.
           </div>
         </Container>
       </footer>
