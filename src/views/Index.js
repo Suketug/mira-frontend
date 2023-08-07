@@ -10,7 +10,6 @@ import IndexHeader from "components/Headers/IndexHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 // sections for this page
-import Images from "./index-sections/Images.js";
 import AboutMira from "./index-sections/AboutMira.js";
 import Features from "./index-sections/Features.js";
 import FAQs from "./index-sections/faqs.js";
@@ -33,7 +32,6 @@ function Index() {
       <div className="wrapper">
         <IndexHeader />
         <div className="main">
-          <Images />
           <AboutMira />
           <Features />
           <FAQs />
