@@ -28,7 +28,7 @@ function IndexHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(" + require("assets/img/back1.png") + ")"
+            backgroundImage: "linear-gradient(rgba(184, 234, 255, 0.80), rgba(184, 234, 255, 0.80)), url(" + require("assets/img/lending_meets_ai.jpeg") + ")"
           }}
           ref={pageHeader}
         ></div>
