@@ -107,9 +107,9 @@ function IndexNavbar() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#register" onClick={(e) => handleNavLinkClick(e, 'register')}>
-                  Register/Login
-                </NavLink>
+                  <NavLink href="/sign-up">
+                      Register/Login
+                  </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
