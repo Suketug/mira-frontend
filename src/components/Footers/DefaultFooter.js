@@ -14,47 +14,34 @@ function DefaultFooter() {
           <nav>
             <ul>
               <li>
-                <a
-                  href="https://www.creative-tim.com?ref=nukr-default-footer"
-                  target="_blank"
-                >
-                  Creative Tim
+                <a href="/" target="_blank">
+                  Home
                 </a>
               </li>
               <li>
-                <a
-                  href="http://presentation.creative-tim.com?ref=nukr-default-footer"
-                  target="_blank"
-                >
+                <a href="/about" target="_blank">
                   About Us
                 </a>
               </li>
               <li>
-                <a
-                  href="http://blog.creative-tim.com?ref=nukr-default-footer"
-                  target="_blank"
-                >
+                <a href="/contact" target="_blank">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="/services" target="_blank">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="/blog" target="_blank">
                   Blog
                 </a>
               </li>
             </ul>
           </nav>
           <div className="copyright" id="copyright">
-            © {new Date().getFullYear()}, Designed by{" "}
-            <a
-              href="https://www.invisionapp.com?ref=nukr-default-footer"
-              target="_blank"
-            >
-              Invision
-            </a>
-            . Coded by{" "}
-            <a
-              href="https://www.creative-tim.com?ref=nukr-default-footer"
-              target="_blank"
-            >
-              Creative Tim
-            </a>
-            .
+            © 2023, MIRA, All Rights Reserved. Designed and Created By <strong>Suketu Gaglani</strong>.
           </div>
         </Container>
       </footer>
