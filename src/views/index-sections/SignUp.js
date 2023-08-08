@@ -39,8 +39,12 @@ function SignUp() {
       }
 
       const userData = {
-          username: email,  // Assuming the email is the username for registration
-          password: password
+          email: email,  
+          password: password,
+          first_name: firstName,
+          last_name: lastName,
+          confirm_password: confirmPassword,
+          role: userType === 'loanOfficer' ? 'Loan Officer' : 'Consumer'
       };
 
       if(userType === 'loanOfficer') {
