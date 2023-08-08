@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import {
   Button,
@@ -18,7 +18,33 @@ import {
 function LoginPage() {
   const [firstFocus, setFirstFocus] = React.useState(false);
   const [lastFocus, setLastFocus] = React.useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(''); // To store and display error messages
 
+  const handleLogin = async () => {
+      const response = await fetch("http://localhost:8000/login/", {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              username: email, // assuming username is the email for login
+              password: password
+          })
+      });
+
+      const data = await response.json();
+
+      if(response.ok) {
+          // Store the token and navigate the user
+          localStorage.setItem('token', data.token);
+          // Navigate to dashboard or main page
+      } else {
+          // Handle errors and display an error message
+          setErrorMessage(data.detail || 'An error occurred.');
+      }
+  }
   return (
     <>
       <div
@@ -81,10 +107,10 @@ function LoginPage() {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
-                      placeholder="Email"
-                      type="text"
-                      onFocus={() => setFirstFocus(true)}
-                      onBlur={() => setFirstFocus(false)}
+                        placeholder="Email"
+                        type="text"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                     ></Input>
                   </InputGroup>
                   <InputGroup
@@ -97,21 +123,22 @@ function LoginPage() {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
-                      placeholder="Password"
-                      type="password"
-                      onFocus={() => setLastFocus(true)}
-                      onBlur={() => setLastFocus(false)}
+                        placeholder="Password"
+                        type="password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
                     ></Input>
                   </InputGroup>
                 </Form>
               </CardBody>
               <CardFooter className="text-center">
-                <Button
-                  className="btn-neutral btn-round"
-                  color="info"
-                  size="lg"
+              <Button
+                    className="btn-neutral btn-round"
+                    color="info"
+                    size="lg"
+                    onClick={handleLogin}
                 >
-                  Login
+                    Login
                 </Button>
                 <br /> {/* Add a line break for spacing */}
                 <Link to="/sign-up">

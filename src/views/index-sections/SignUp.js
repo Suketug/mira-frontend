@@ -24,7 +24,46 @@ function SignUp() {
   const [firstFocus, setFirstFocus] = React.useState(false);
   const [lastFocus, setLastFocus] = React.useState(false);
   const [emailFocus, setEmailFocus] = React.useState(false);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [nmlsId, setNmlsId] = useState('');  // Only for Loan Officer
+  const [errorMessage, setErrorMessage] = useState(''); // To store and display error messages
 
+  const handleSignUp = async () => {
+      if(password !== confirmPassword) {
+          setErrorMessage('Passwords do not match.');
+          return;
+      }
+
+      const userData = {
+          username: email,  // Assuming the email is the username for registration
+          password: password
+      };
+
+      if(userType === 'loanOfficer') {
+          userData.nmlsId = nmlsId;  // Add NMLS ID for loan officers
+      }
+
+      const response = await fetch("http://localhost:8000/register/", {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(userData)
+      });
+
+      const data = await response.json();
+
+      if(response.ok) {
+          // Navigate the user to login page or any other suitable page
+      } else {
+          // Handle errors and display an error message
+          setErrorMessage(data.detail || 'An error occurred during registration.');
+      }
+  }
   return (
     <>
         <div
@@ -106,10 +145,10 @@ function SignUp() {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
-                      placeholder="First Name"
-                      type="text"
-                      onFocus={() => setFirstFocus(true)}
-                      onBlur={() => setFirstFocus(false)}
+                        placeholder="First Name"
+                        type="text"
+                        value={firstName}
+                        onChange={e => setFirstName(e.target.value)}
                     ></Input>
                   </InputGroup>
                   <InputGroup
@@ -124,9 +163,9 @@ function SignUp() {
                     <Input
                       placeholder="Last Name"
                       type="text"
-                      onFocus={() => setLastFocus(true)}
-                      onBlur={() => setLastFocus(false)}
-                    ></Input>
+                      value={lastName}
+                      onChange={e => setLastName(e.target.value)}
+                  ></Input>
                   </InputGroup>
                   <InputGroup
                     className={
@@ -138,10 +177,10 @@ function SignUp() {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
-                      placeholder="Email"
-                      type="text"
-                      onFocus={() => setEmailFocus(true)}
-                      onBlur={() => setEmailFocus(false)}
+                        placeholder="Email"
+                        type="text"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                     ></Input>
                   </InputGroup>
                   {userType === 'loanOfficer' && (
@@ -154,7 +193,9 @@ function SignUp() {
                       <Input
                         placeholder="NMLS ID"
                         type="text"
-                      ></Input>
+                        value={nmlsId}
+                        onChange={e => setNmlsId(e.target.value)}
+                    ></Input>
                     </InputGroup>
                   )}
                   <InputGroup className="no-border input-lg">
@@ -164,8 +205,10 @@ function SignUp() {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
-                      placeholder="Password"
-                      type="password"
+                        placeholder="Password"
+                        type="password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
                     ></Input>
                   </InputGroup>
                   <InputGroup className="no-border input-lg">
@@ -175,8 +218,10 @@ function SignUp() {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
-                      placeholder="Confirm Password"
-                      type="password"
+                        placeholder="Confirm Password"
+                        type="password"
+                        value={confirmPassword}
+                        onChange={e => setConfirmPassword(e.target.value)}
                     ></Input>
                   </InputGroup>
                 </Form>
@@ -186,6 +231,7 @@ function SignUp() {
                   className="btn-neutral btn-round"
                   color="info"
                   size="lg"
+                  onClick={handleSignUp}
                 >
                   Get Started
                 </Button>
