@@ -26,7 +26,7 @@ function SignUp() {
   const [emailFocus, setEmailFocus] = React.useState(false);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
+  const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [nmlsId, setNmlsId] = useState('');  // Only for Loan Officer
@@ -39,13 +39,14 @@ function SignUp() {
       }
 
       const userData = {
-          email: email,  
+          username: email,  
           password: password,
           first_name: firstName,
           last_name: lastName,
           confirm_password: confirmPassword,
           role: userType === 'loanOfficer' ? 'Loan Officer' : 'Consumer'
       };
+    
 
       if(userType === 'loanOfficer') {
           userData.nmlsId = nmlsId;  // Add NMLS ID for loan officers
@@ -69,7 +70,7 @@ function SignUp() {
       }
   }
   return (
-    <>
+    <>  
         <div
             className="section section-signup"
             style={{
@@ -120,9 +121,9 @@ function SignUp() {
                 <Nav className="nav-tabs-info justify-content-center" tabs>
                   <NavItem>
                     <NavLink
-                      className={userType === 'user' ? 'active' : ''}
-                      onClick={() => setUserType('user')}>
-                      User
+                      className={userType === 'Consumer' ? 'active' : ''}
+                      onClick={() => setUserType('Consumer')}>
+                      Consumer
                     </NavLink>
                   </NavItem>
                   <NavItem>
@@ -184,7 +185,7 @@ function SignUp() {
                         placeholder="Email"
                         type="text"
                         value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        onChange={e => setUsername(e.target.value)}
                     ></Input>
                   </InputGroup>
                   {userType === 'loanOfficer' && (
