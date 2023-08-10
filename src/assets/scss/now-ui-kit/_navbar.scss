@@ -76,8 +76,8 @@
             }
 
             &.disabled{
-                opacity: .5;
-                color: $white-color;
+                opacity: .9;
+                color: $black-color;
             }
         }
 
@@ -85,9 +85,10 @@
         .nav-item .nav-link:not(.btn):focus,
         .nav-item .nav-link:not(.btn):hover,
         .nav-item .nav-link:not(.btn):active{
-            background-color: $opacity-2;
+            background-color: #898a8d; // Change this to your desired background color with opacity
             border-radius: $border-radius-small;
         }
+          
     }
 
     .logo-container{
@@ -202,4 +203,14 @@
 html, body {
     scroll-behavior: smooth;
 }
+  
+.NavLink {
+    color: #000;
+    transition: color 0.3s ease;
+    
+  
+    &:hover {
+      color: #333; // Or any other color for hover effect
+    }
+  }
   

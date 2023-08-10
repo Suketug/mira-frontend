@@ -92,22 +92,22 @@ function IndexNavbar() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink href="#about-mira" onClick={(e) => handleNavLinkClick(e, 'about-mira')}>
+                <NavLink href="#about-mira" onClick={(e) => handleNavLinkClick(e, 'about-mira' )} style={{fontWeight: 'bold', color: '#000' }}>
                   About MIRA
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#features" onClick={(e) => handleNavLinkClick(e, 'features')}>
+                <NavLink href="#features" onClick={(e) => handleNavLinkClick(e, 'features')} style={{fontWeight: 'bold', color: '#000' }}>
                   Features
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#FAQs" onClick={(e) => handleNavLinkClick(e, 'FAQs')}>
+                <NavLink href="#FAQs" onClick={(e) => handleNavLinkClick(e, 'FAQs')} style={{fontWeight: 'bold', color: '#000' }}>
                   FAQs
                 </NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink href="/sign-up">
+                  <NavLink href="/sign-up" style={{ fontWeight: 'bold', color: '#000' }}>
                       Register/Login
                   </NavLink>
               </NavItem>

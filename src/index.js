@@ -13,6 +13,8 @@ import Index from "views/Index.js";
 
 import LoginPage from "views/index-sections/LoginPage.js";
 import SignUp from "views/index-sections/SignUp.js";
+import ChatInterface from "views/index-sections/chat_interface.js";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,6 +23,7 @@ root.render(
     <Routes>
       <Route path="/index" element={<Index />} />
       <Route path="/login-page" element={<LoginPage />} />
+      <Route path="/chat" element={<ChatInterface />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="*" element={<Navigate to="/index" replace />} />
     </Routes>

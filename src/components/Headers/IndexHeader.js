@@ -28,14 +28,14 @@ function IndexHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "linear-gradient(rgba(184, 234, 255, 0.80), rgba(184, 234, 255, 0.80)), url(" + require("assets/img/lending_meets_ai.jpeg") + ")"
+            backgroundImage: "linear-gradient(rgba(184, 234, 255, 0.60), rgba(184, 234, 255, 0.60)), url(" + require("assets/img/lending_meets_ai.jpeg") + ")"
           }}
           ref={pageHeader}
         ></div>
         <Container>
           <div className="content-center brand">
-            <h1 className="h1-seo">Discover MIRA.</h1>
-            <h3>Pioneering the Power of AI in Mortgage Lending.<br />Where Mortgage Excellence Meets AI Innovation.</h3>
+          <h1 className="h1-seo" style={{ fontWeight: 'bold', color: '#000' }}>Discover MIRA.</h1>
+          <h3 style={{ fontWeight: 'bold' }}>Pioneering the Power of AI in Mortgage Lending.<br />Where Mortgage Excellence Meets AI Innovation.</h3>
           </div>
         </Container>
       </div>

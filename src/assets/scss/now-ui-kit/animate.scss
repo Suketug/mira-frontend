@@ -1,0 +1,22 @@
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blinking-cursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+.typing-effect {
+  display: inline-block; // Add this property
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: .15em solid #000; // Cursor color
+  width: 0;
+  animation:
+    typing 4s steps(40, end) infinite, // Make sure to adjust the 40 to match the number of characters
+    blinking-cursor .5s step-end infinite; // Cursor blinking effect
+}

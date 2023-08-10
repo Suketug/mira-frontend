@@ -21,16 +21,16 @@ import {
 
 function SignUp() {
   const [userType, setUserType] = useState('user');
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
-  const [emailFocus, setEmailFocus] = React.useState(false);
+  const [firstFocus] = React.useState(false);
+  const [lastFocus] = React.useState(false);
+  const [emailFocus] = React.useState(false);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [nmlsId, setNmlsId] = useState('');  // Only for Loan Officer
-  const [errorMessage, setErrorMessage] = useState(''); // To store and display error messages
+  const [setErrorMessage] = useState(''); // To store and display error messages
 
   const handleSignUp = async () => {
       if(password !== confirmPassword) {

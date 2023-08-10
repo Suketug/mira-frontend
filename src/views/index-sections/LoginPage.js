@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Card,
@@ -16,13 +17,15 @@ import {
 } from "reactstrap";
 
 function LoginPage() {
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
+  const [firstFocus] = React.useState(false);
+  const [lastFocus] = React.useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(''); // To store and display error messages
+  const navigate = useNavigate();
+  const [setErrorMessage] = useState(''); // To store and display error messages
 
   const handleLogin = async () => {
+    try {
       const response = await fetch("http://localhost:8000/login/", {
           method: 'POST',
           headers: {
@@ -39,12 +42,16 @@ function LoginPage() {
       if(response.ok) {
           // Store the token and navigate the user
           localStorage.setItem('token', data.token);
-          // Navigate to dashboard or main page
+          navigate("/chat"); // Navigate to chat interface
       } else {
           // Handle errors and display an error message
           setErrorMessage(data.detail || 'An error occurred.');
       }
-  }
+    } catch (error) {
+      // Handle any unexpected errors
+      setErrorMessage('An unexpected error occurred. Please try again.');
+    }
+  };
   return (
     <>
       <div
